@@ -33,6 +33,12 @@ class Datathon:
         usage = usage.rename(columns={'fips': 'fips', usage_type: new_name})
         return usage
 
+    def get_water_usage(self, usage_type, new_name):
+        water_usage = self.df_dict["water_usage"]
+        usage = water_usage[["fips",usage_type]]
+        usage = usage.rename(columns={'fips': 'fips', usage_type: new_name})
+        return usage
+
     def plot_chem_processed_data(self, chemical):
         df = pd.read_csv(self.chem_proc_path(chemical),encoding = "ISO-8859-1")
         chemical_df = df[["fips","CL_score"]]

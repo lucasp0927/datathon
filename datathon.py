@@ -6,7 +6,7 @@ class Datathon:
     def data_set_path(self, set_name):
         return os.path.join(FILEDIR,set_name+".csv")
 
-    def print_info(self, ):
+    def read_data_files(self, ):
         print('data sets: ', self.data_set)
         self.df_array = {}
         for ds in self.data_set:
@@ -47,7 +47,7 @@ class Datathon:
     def __init__(self, csv_filename):
         self.csv_filename = csv_filename
         self.read_csv_file()
-        self.print_info()
+        self.read_data_files()
 
 if __name__ == '__main__':
     fname = "SoCal Datathon Data Table Heads.csv"

@@ -28,6 +28,8 @@ class Datathon:
                     print("data set name: ",data_set_name)
                     feature_num = sum(map(lambda x: 1 if x else 0, row))-1
                     print("number of features: ", feature_num)
+                    if not os.path.exists(FILEDIR):
+                        os.makedirs(FILEDIR)
                     filepath = self.data_set_path(data_set_name)
                     print("open file ", filepath)
                     csv_file = open(filepath, mode='w')

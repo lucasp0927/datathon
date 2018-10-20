@@ -11,7 +11,7 @@ class Datathon:
         self.df_array = {}
         for ds in self.data_set:
             print(ds)
-            df = pd.read_csv(self.data_set_path(ds))
+            df = pd.read_csv(self.data_set_path(ds),encoding = "ISO-8859-1")
             self.df_array[ds] = df
             #print(df.head(5))
 
